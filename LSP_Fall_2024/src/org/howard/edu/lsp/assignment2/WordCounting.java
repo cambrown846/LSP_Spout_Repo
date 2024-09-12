@@ -33,3 +33,5 @@ public class WordCounting {
         }
     }
 }
+
+//When the code is ran, it allows you to input a phrase and then it'll count the words after clicking enter twice
