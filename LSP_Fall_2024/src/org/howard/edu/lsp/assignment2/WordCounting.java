@@ -15,7 +15,7 @@ public class WordCounting {
 
             line = line.toLowerCase();
             String[] words = line.split("[^a-zA-Z]+");
-
+ 
             for (String word : words) {
                 if (word.length() > 3) {
                     wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1);
