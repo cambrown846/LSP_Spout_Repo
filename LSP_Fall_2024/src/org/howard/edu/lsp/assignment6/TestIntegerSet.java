@@ -1,3 +1,4 @@
+//Camryn Brown
 package org.howard.edu.lsp.assignment6;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +33,7 @@ public class TestIntegerSet {
         set.add(10);
         set.remove(5);
         assertFalse(set.contains(5), "Set should not contain 5 after removal");
-        set.remove(15); // Non-existent element
+        set.remove(15); 
         assertEquals(1, set.length(), "Length should remain 1 after trying to remove a non-existent element");
     }
 
