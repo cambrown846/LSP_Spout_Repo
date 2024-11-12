@@ -1,15 +1,12 @@
 //Camryn Brown
 package org.howard.edu.lsp.assignment6;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class IntegerSet {
-    private List<Integer> set = new ArrayList<Integer>();
+    private List<Integer> set = new ArrayList<>();
 
-   
     public IntegerSet() {
     }
 
@@ -33,19 +30,21 @@ public class IntegerSet {
         return this.set.containsAll(other.set) && other.set.containsAll(this.set);
     }
 
-
     public boolean contains(int value) {
         return set.contains(value);
     }
 
-
-    public int largest() {
-        if (isEmpty()) throw new IllegalStateException("Set is empty");
+    public int largest() throws IntegerSetException {
+        if (isEmpty()) {
+            throw new IntegerSetException("Set is empty, cannot find largest element");
+        }
         return set.stream().max(Integer::compareTo).orElseThrow();
     }
 
-    public int smallest() {
-        if (isEmpty()) throw new IllegalStateException("Set is empty");
+    public int smallest() throws IntegerSetException {
+        if (isEmpty()) {
+            throw new IntegerSetException("Set is empty, cannot find smallest element");
+        }
         return set.stream().min(Integer::compareTo).orElseThrow();
     }
 
@@ -54,11 +53,10 @@ public class IntegerSet {
             set.add(item);
         }
     }
-    
+
     public void remove(int item) {
         set.remove(Integer.valueOf(item));
     }
-
 
     public void union(IntegerSet intSetb) {
         for (Integer item : intSetb.set) {
@@ -70,26 +68,23 @@ public class IntegerSet {
         set.retainAll(intSetb.set);
     }
 
-
     public void diff(IntegerSet intSetb) {
         set.removeAll(intSetb.set);
     }
 
-
     public void complement(IntegerSet intSetb) {
-        List<Integer> complement = new ArrayList<>(set);
-        complement.removeAll(intSetb.set);
-        set = complement;
+        List<Integer> complementList = new ArrayList<>(set);
+        complementList.removeAll(intSetb.set);
+        set = complementList;
     }
-
 
     public boolean isEmpty() {
         return set.isEmpty();
     }
 
- 
     @Override
     public String toString() {
         return "Set: " + set.toString();
     }
+
 }
