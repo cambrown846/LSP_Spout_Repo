@@ -1,5 +1,5 @@
 //Camryn Brown
-//Help figuring out random number generation through Google
+//Help figuring out random number generation through Google AI
 
 package org.howard.edu.lsp.finalexam.question2;
 
