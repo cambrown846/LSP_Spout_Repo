@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.InputMismatchException;
 
-//JUnit 5
+//JUnit 5 Test File
 public class MathUtilsTest {
 
     @Test
