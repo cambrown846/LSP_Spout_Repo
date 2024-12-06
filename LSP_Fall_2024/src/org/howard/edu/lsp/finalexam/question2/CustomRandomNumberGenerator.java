@@ -1,4 +1,5 @@
 //Camryn Brown
+//Help figuring out random number generation through Google
 
 package org.howard.edu.lsp.finalexam.question2;
 
